@@ -83,15 +83,15 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(inningScore, inningCount){
+function finalScore(score, innings){
 
   let finalScore = {
     "Home": 0, 
     "Away": 0,
   }
-    for (i = 0; i < inningCount; i++){
-      finalScore["Home"] += inningScore();
-      finalScore["Away"] += inningScore();
+    for (i = 0; i < innings; i++){
+      finalScore["Home"] += score();
+      finalScore["Away"] += score();
     }
     return finalScore;
 }
@@ -118,8 +118,12 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(score, innings) {
+  
+  let scoreboard = {
+    "Home": 0, 
+    "Away": 0,
+  }
 }
 
 
