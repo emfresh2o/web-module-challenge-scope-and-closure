@@ -28,7 +28,14 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * --> `counter 1` has a variable inside its own function where the scope
+ *      of the data can only be accessed inside its own function and not outside.
+ * --> `counter 2` has a variable which is declared outside the function which
+ *      can e accessed globally
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * --> `counter 2` uses a closure because the variable can be access.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
@@ -56,9 +63,9 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
+    return Math.floor(Math.random()*3);
 
 }
 
@@ -76,11 +83,19 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inningScore, inningCount){
 
-  /*Code Here*/
-
+  let finalScore = {
+    "Home": 0, 
+    "Away": 0,
+  }
+    for (i = 0; i < inningCount; i++){
+      finalScore["Home"] += inningScore();
+      finalScore["Away"] += inningScore();
+    }
+    return finalScore;
 }
+  console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
