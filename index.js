@@ -95,7 +95,7 @@ function finalScore(score, innings){
     }
     return finalScore;
 }
-  console.log(finalScore(inning, 9));
+  console.table(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -121,9 +121,18 @@ Final Score: 6 - 10 */
 function scoreboard(score, innings) {
   
   let scoreboard = {
-    "Home": 0, 
-    "Away": 0,
+    "Home": {}, 
+    "Away": {},
   }
-}
+  for (i = 0; i < innings; i++) {
+    
+    scoreboard["Home"][`inning ${i + 1}`] = score() + (scoreboard["Home"][`inning ${i}`] || 0);
+    scoreboard["Away"][`inning ${i + 1}`] = score() + (scoreboard["Away"][`inning ${i}`] || 0);
+  }
+  scoreboard["Home"]["Final"] = scoreboard["Home"][`inning ${innings}`];
+  scoreboard["Away"]["Final"] = scoreboard["Away"][`inning ${innings}`];
 
+  return scoreboard;
+}
+console.table(scoreboard(inning, 9));
 
