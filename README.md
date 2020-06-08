@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+---> Closure means that codes inside the `function` block is accesscible to its own function and the variables that are outside the main block.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+---> The `function` in `personalDice` gets its reference from the `name` variable which is nested within the `function` but since it is declared, it is still accessible in the parent function by passing an argument inside.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+c. What is the lexical scope of `newRoll`? the `function` personalDice 
 
 ### Task 3 - Stretch Goals
 
